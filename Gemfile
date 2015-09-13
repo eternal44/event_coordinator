@@ -23,6 +23,7 @@ group :test do
   gem 'minitest-reporters', '1.0.5'
   gem 'minitest-rails-capybara', '~> 2.1.1'
   gem 'guard-minitest', '2.3.1'
-end
+  gem 'selenium-webdriver'
 
+end
 
