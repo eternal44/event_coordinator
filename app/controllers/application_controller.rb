@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
   def set_account
-    @account = Account.find_by(subdomain: request.subdomain)
+    if current_user.account.subdomain == request.subdomain
+      @account = Account.find_by(subdomain: request.subdomain)
+    end
   end
 
   def configure_permitted_parameters
