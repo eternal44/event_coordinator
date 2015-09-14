@@ -11,6 +11,10 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+test:
   subdomain: test
   user: one
+
+other:
+  subdomain: other
+  user: two
