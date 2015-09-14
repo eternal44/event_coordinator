@@ -10,7 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
-gem "simple_calendar", "~> 2.0"
+gem 'simple_calendar', git: 'https://github.com/excid3/simple_calendar.git', ref: 'f67ff018c64f1d87997594b5546cae9964250d85'
 
 group :development, :test do
   gem 'byebug'

@@ -2,6 +2,16 @@
 
 <h1>Listing Events</h1>
 
+<%= month_calendar attribute: :time, events: @events do |date, time_slots| %>
+  <%= date %>
+
+  <% time_slots.each do |event| %>
+    <div>
+      <%= event.event_name %>
+    </div>
+  <% end %>
+<% end %>
+
 <table>
   <thead>
     <tr>
