@@ -9,7 +9,7 @@
 
       <% time_slots.each do |event| %>
         <div>
-          <%= event.event_name %>
+          <%= link_to event.event_name, event %>
         </div>
       <% end %>
     <% end %>
