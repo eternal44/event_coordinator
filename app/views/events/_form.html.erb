@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :time %><br>
-    <%= f.datetime_select :time %>
+    <%= f.datetime_select :time, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :event_name %><br>
-    <%= f.text_field :event_name %>
+    <%= f.text_field :event_name, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
