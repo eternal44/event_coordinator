@@ -11,12 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_account
-    if current_user.account.subdomain == request.subdomain
-      @account = Account.find_by(subdomain: request.subdomain)
-    else
-      redirect_to root_url(subdomain: current_user.account.subdomain),
-        alert: "You aren't a member of that subdomain"
-    end
+    @account = Account.find_by(subdomain: request.subdomain)
   end
 
   def configure_permitted_parameters
