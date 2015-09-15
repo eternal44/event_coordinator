@@ -2,40 +2,48 @@
 
 <h1>Listing Events</h1>
 
-<%= month_calendar attribute: :time, events: @events do |date, time_slots| %>
-  <%= date %>
+<div class="container">
+  <div class="col-xs-7">
+  <%= month_calendar attribute: :time, events: @events do |date, time_slots| %>
+    <%= date.strftime("%m/%d") %>
 
-  <% time_slots.each do |event| %>
-    <div>
-      <%= event.event_name %>
-    </div>
-  <% end %>
-<% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Location</th>
-      <th>Time</th>
-      <th>Event name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.location %></td>
-        <td><%= event.time %></td>
-        <td><%= event.event_name %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% time_slots.each do |event| %>
+      <div>
+        <%= event.event_name %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+  </div><!--col-xs-8-->
+
+  <div class="col-xs-5">
+    <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Time</th>
+        <th>Event name</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  </div><!--col-xs-4-->
+
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.location %></td>
+          <td><%= event.time.strftime("%H:%M") %></td>
+          <td><%= event.event_name %></td>
+          <td><%= link_to 'Show', event %></td>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br />
+<%= link_to 'New Event', new_event_path %>
+</div><!--container-->
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
