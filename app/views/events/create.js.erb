@@ -1,1 +1,3 @@
-$('#events').append("<%= j render @event %>");
+content = '<%= escape_javascript render(@events) %>'
+$('tbody').fadeOut('slow').html(content).fadeIn('slow')
+

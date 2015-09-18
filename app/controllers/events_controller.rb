@@ -28,16 +28,24 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = @account.events.new(event_params)
+    @event.save!
+
+    @events = @account.events.all
 
     respond_to do |format|
-      if @event.save
-        format.json { render :index, status: :created, location: @event }
-        format.js # render events/create.js.erb 
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to events_path }
+      format.js
     end
+
+    # respond_to do |format|
+    #   if @event.save
+    #     format.html { redirect_to events_path }
+    #     format.js # render events/create.js.erb 
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @event.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /events/1
