@@ -1,3 +1,7 @@
-content = '<%= escape_javascript render(@events) %>'
-$('tbody').fadeOut('slow').html(content).fadeIn('slow')
+index_content = '<%= escape_javascript render(@events) %>'
+$('#events-section').html(index_content)
+
+<%# these two lines below aren't working %>
+calendar_content = '<%= escape_javascript render('calendar') %>'
+$('#calendar-section').html(calendar_content)
 

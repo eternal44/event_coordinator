@@ -40,7 +40,7 @@ class EventsController < ApplicationController
     # respond_to do |format|
     #   if @event.save
     #     format.html { redirect_to events_path }
-    #     format.js # render events/create.js.erb 
+    #     format.js # render events/create.js.erb
     #   else
     #     format.html { render :new }
     #     format.json { render json: @event.errors, status: :unprocessable_entity }
