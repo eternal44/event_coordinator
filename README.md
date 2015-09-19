@@ -10,5 +10,5 @@ so please clone and use 'lvh.me' as your local host.
 
   Example:  example.lvh.me:3000/events
 
-You can also use your own DNS provider to configure subdomains.
+You can also use your own DNS provider to use subdomains.
 
