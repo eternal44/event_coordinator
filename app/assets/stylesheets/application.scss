@@ -12,7 +12,7 @@
  *
  */
 
-@import "bootstrap-sprockets";
+// @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
@@ -21,4 +21,8 @@ body {
 
 table {
   width: 100%;
+}
+
+#indent {
+  text-indent: 6px;
 }
